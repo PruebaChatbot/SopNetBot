@@ -22,12 +22,14 @@
         </input>
 
         <input pattern="(no) *">
-          <output value="Disculpe, ¿Cuál es su nombre entonces?"/>
+          <context>
+            <output value="Disculpe, ¿Cuál es su nombre entonces?"/>
 
-          <input pattern="$Text">
-            <var name="UserName" value="$Text" scope="user"/>
-            <output value="Perfecto $UserName!"/>
-          </input>
+            <input pattern="$Text">
+              <var name="UserName" value="$Text" scope="user"/>
+              <output value="Perfecto $UserName!"/>
+            </input>
+          </context>
         </input>
 
     </context>
