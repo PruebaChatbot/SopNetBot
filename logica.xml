@@ -13,23 +13,23 @@
     </context>
   </input>
 
-  <context if="full($UserName)">
-    <input pattern="(cambiar|no es) * nombre">
+  <input pattern="(cambiar|no es) * nombre">
+    <context if="full($UserName)">
       <output value="¿$UserName es su nombre correcto?"/>
 
-      <input pattern="(si) *">
-        <output value="Ah ok, pensé que $UserName no era su nombre correcto"/>
-      </input>
-
-      <input pattern="(no) *">
-        <output value="Disculpe, ¿Cuál es su nombre entonces?"/>
-
-        <input pattern="$Text">
-          <var name="UserName" value="$Text" scope="user"/>
-          <output value="Perfecto $UserName!"/>
+        <input pattern="(si) *">
+          <output value="Ah ok, pensé que $UserName no era su nombre correcto"/>
         </input>
-      </input>
 
-    </input>
-  </context>
+        <input pattern="(no) *">
+          <output value="Disculpe, ¿Cuál es su nombre entonces?"/>
+
+          <input pattern="$Text">
+            <var name="UserName" value="$Text" scope="user"/>
+            <output value="Perfecto $UserName!"/>
+          </input>
+        </input>
+
+    </context>
+  </input>
 </context>
